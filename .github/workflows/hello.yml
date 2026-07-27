@@ -1,0 +1,19 @@
+# name of the workflow
+name: Hello workflow
+# this is indicate that when the workflow will run 
+on:
+ push:
+   branches: [main]
+
+# Now comes to job which is availabel inside the workflow
+jobs:
+# name of the job inside the workflow
+  greet:
+    # then this is the runner where the job will run on (any server)
+    runs-on: ubuntu-latest
+    # this below steps indicate that what need to run
+    steps:
+      - name: say hello to the users
+        run: echo "Hello Asish"
+      - name: say hello to the username
+        run: echo "Hello $USER"
